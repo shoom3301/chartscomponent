@@ -1,0 +1,29 @@
+{
+  "name": "reacttask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shoom3301/reacttask.git"
+  },
+  "author": "Alexandr Kazachenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shoom3301/reacttask/issues"
+  },
+  "homepage": "https://github.com/shoom3301/reacttask#readme",
+  "dependencies": {
+    "jsx-loader": "^0.13.2",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  }
+}
