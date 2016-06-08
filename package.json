@@ -1,5 +1,5 @@
 {
-  "name": "reacttask",
+  "name": "chartcomponent",
   "version": "1.0.0",
   "description": "",
   "main": "./js/index.js",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shoom3301/reacttask#readme",
   "dependencies": {
+    "angular": "^1.5.6",
     "jsx-loader": "^0.13.2",
     "webpack": "^1.13.1"
   },
