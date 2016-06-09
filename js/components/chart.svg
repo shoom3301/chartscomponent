@@ -1,0 +1,29 @@
+<svg viewBox="0 0 800 250" class="chart">
+    <line class="cursor" x1="80" y1="0" x2="80" y2="250"></line>
+    <g class="x-lines">
+        <line x1="60" y1="200" x2="750" y2="200"></line>
+        <line x1="60" y1="150" x2="750" y2="150"></line>
+        <line x1="60" y1="100" x2="750" y2="100"></line>
+        <line x1="60" y1="50" x2="750" y2="50"></line>
+    </g>
+    <polyline class="path" fill="none" points="
+    100,180 130,130 170,140 200,130 210,180 260,70 340,100 400,180 450,100"></polyline>
+    <g class="circles" data-setname="Our first data set">
+        <circle cx="200" cy="130" data-value="7.2" r="4"></circle>
+        <circle cx="340" cy="100" data-value="8.1" r="4"></circle>
+        <circle cx="450" cy="100" data-value="7.7" r="4"></circle>
+    </g>
+    <g class="labels x-labels">
+        <text x="100" y="230">январь</text>
+        <text x="250" y="230">февраль</text>
+        <text x="400" y="230">март</text>
+        <text x="550" y="230">апрель</text>
+        <text x="700" y="230">июнь</text>
+    </g>
+    <g class="labels y-labels">
+        <text x="30" y="200">80</text>
+        <text x="30" y="150">60</text>
+        <text x="30" y="100">40</text>
+        <text x="30" y="50">20</text>
+    </g>
+</svg>
