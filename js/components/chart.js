@@ -37,6 +37,13 @@ class Chart {
         let max = this.y[this.y.length-1].val;
         return this.height-((this.height*(y-(y*this.percentY/100))/max)+this.offsetY);
     }
+    /**
+     * Mouse move event handler
+     * @param e {Event}
+     */
+    mouseMove(e){
+        this.cursorX = e.pageX - e.currentTarget.getBoundingClientRect().left;
+    }
 }
 
 module.exports = {

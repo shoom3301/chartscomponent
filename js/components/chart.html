@@ -1,5 +1,5 @@
-<svg width="{{$ctrl.width}}" height="{{$ctrl.height}}" class="chart">
-    <line class="cursor" x1="80" y1="0" x2="80" y2="{{$ctrl.height}}"></line>
+<svg width="{{$ctrl.width}}" height="{{$ctrl.height}}" ng-mousemove="$ctrl.mouseMove($event)" class="chart">
+    <line class="cursor" x1="{{$ctrl.cursorX}}" y1="0" x2="{{$ctrl.cursorX}}" y2="{{$ctrl.height}}"></line>
     <g class="x-lines">
         <line ng-repeat="line in $ctrl.y"
               x1="{{ $ctrl.offsetX }}"
@@ -9,7 +9,7 @@
     </g>
     <polyline class="path" fill="none" points="{{$ctrl.path()}}"></polyline>
     <g class="circles">
-        <circle ng-repeat="point in $ctrl.data" cx="{{ $ctrl.axisX(point.x) }}" cy="{{ $ctrl.axisY(point.y) }}" r="4"></circle>
+        <circle ng-repeat="point in $ctrl.data" cx="{{ $ctrl.axisX(point.x) }}" cy="{{ $ctrl.axisY(point.y) }}"></circle>
     </g>
     <g class="labels x-labels">
         <text ng-repeat="line in $ctrl.x" x="{{ $ctrl.axisX(line.val) }}" y="{{ $ctrl.height-($ctrl.offsetY/2) }}">{{line.label}}</text>
