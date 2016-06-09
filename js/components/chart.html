@@ -3,21 +3,18 @@
     <g class="x-lines">
         <line ng-repeat="line in $ctrl.y"
               x1="{{ $ctrl.offsetX }}"
-              y1="{{ $ctrl.axisY(line[0]) }}"
+              y1="{{ $ctrl.axisY(line.val) }}"
               x2="{{ $ctrl.width-$ctrl.offsetX }}"
-              y2="{{ $ctrl.axisY(line[0]) }}"></line>
+              y2="{{ $ctrl.axisY(line.val) }}"></line>
     </g>
-    <polyline class="path" fill="none" points="
-    100,180 130,130 170,140 200,130 210,180 260,70 340,100 400,180 450,100"></polyline>
+    <polyline class="path" fill="none" points="{{$ctrl.path()}}"></polyline>
     <g class="circles">
-        <circle cx="200" cy="130" data-value="7.2" r="4"></circle>
-        <circle cx="340" cy="100" data-value="8.1" r="4"></circle>
-        <circle cx="450" cy="100" data-value="7.7" r="4"></circle>
+        <circle ng-repeat="point in $ctrl.data" cx="{{ $ctrl.axisX(point.x) }}" cy="{{ $ctrl.axisY(point.y) }}" r="4"></circle>
     </g>
     <g class="labels x-labels">
-        <text ng-repeat="line in $ctrl.x" x="{{ $ctrl.axisX(line[0]) }}" y="{{ $ctrl.height-$ctrl.offsetY }}">{{line[1]}}</text>
+        <text ng-repeat="line in $ctrl.x" x="{{ $ctrl.axisX(line.val) }}" y="{{ $ctrl.height-$ctrl.offsetY }}">{{line.label}}</text>
     </g>
     <g class="labels y-labels">
-        <text ng-repeat="line in $ctrl.y" x="{{ $ctrl.offsetX }}" y="{{ $ctrl.axisY(line[0]) }}">{{line[1]}}</text>
+        <text ng-repeat="line in $ctrl.y" x="{{ $ctrl.offsetX }}" y="{{ $ctrl.axisY(line.val) }}">{{line.label}}</text>
     </g>
 </svg>

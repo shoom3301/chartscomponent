@@ -5,13 +5,27 @@ let data = {
     width: 800,
     height: 250,
     x: [
-        [0, 'january'], [20, 'february'], [40, 'mart'], [60, 'april'], [80, 'may'], [100, 'june']
+        {val: 0, label: 'january'},
+        {val: 20, label: 'february'},
+        {val: 40, label: 'mart'},
+        {val: 60, label: 'april'},
+        {val: 80, label: 'may'},
+        {val: 100, label: 'june'}
     ],
     y: [
-        [20, '20'], [40, '40'], [60, '60'], [80, '80'], [100, '100'], [120, '120']
+        {val: 0, label: '0'},
+        {val: 20, label: '20'},
+        {val: 40, label: '40'},
+        {val: 60, label: '60'},
+        {val: 80, label: '80'}
     ],
     data: [
-        [0,0,'2 jan.'], [12,62,'18 jan.'], [28,78,'4 feb.'], [40,20,'1 mar.'], [64,48,'3 apr.'], [82,78,'8 jun.']
+        {x: 0, y: 0, label: '2 jan.'},
+        {x: 12, y: 62, label: '18 jan.'},
+        {x: 28, y: 78, label: '4 feb.'},
+        {x: 40, y: 20, label: '1 mar.'},
+        {x: 64, y: 48, label: '3 apr.'},
+        {x: 82, y: 78, label: '8 jun.'}
     ]
 };
 

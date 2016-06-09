@@ -8,12 +8,23 @@ class Chart {
     }
 
     /**
+     * Generate string of coordinates for polyline
+     * @returns {string}
+     */
+    path(){
+        let path = [];
+        for(var i=0; i<this.data.length; i++){
+            path.push(this.axisX(this.data[i].x)+','+this.axisY(this.data[i].y));
+        }
+        return path.join(' ');
+    }
+    /**
      * Coordinate of point by X axis
      * @param x {number}
      * @returns {number}
      */
     axisX(x){
-        let max = this.x[this.x.length-1][0];
+        let max = this.x[this.x.length-1].val;
         return (this.width*x/max)+this.offsetX;
     }
     /**
@@ -22,8 +33,8 @@ class Chart {
      * @returns {number}
      */
     axisY(y){
-        let max = this.y[this.y.length-1][0];
-        return (this.height*y/max)-this.offsetY;
+        let max = this.y[this.y.length-1].val;
+        return this.height-((this.height*y/max)+this.offsetY);
     }
 }
 
