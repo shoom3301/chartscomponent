@@ -1,0 +1,34 @@
+<svg width="{{$ctrl.width}}" height="{{$ctrl.height}}" ng-mousemove="$ctrl.mouseMove($event)" class="chart">
+    <line class="cursor" x1="{{$ctrl.cursorX}}" y1="0" x2="{{$ctrl.cursorX}}" y2="{{$ctrl.height}}"></line>
+    <g class="x-lines">
+        <line ng-repeat="line in $ctrl.y"
+              x1="{{ $ctrl.offsetX }}"
+              y1="{{ $ctrl.axisY(line.val) }}"
+              x2="{{ $ctrl.width-$ctrl.offsetX }}"
+              y2="{{ $ctrl.axisY(line.val) }}"></line>
+    </g>
+    <polyline class="path" fill="none" points="{{$ctrl.path()}}"></polyline>
+    <g class="circles">
+        <circle r="0"
+                ng-repeat="point in $ctrl.data"
+                ng-class="{active: $ctrl.activePoint(point)}"
+                cx="{{ $ctrl.axisX(point.x) }}"
+                cy="{{ $ctrl.axisY(point.y) }}"></circle>
+    </g>
+    <g class="labels x-labels">
+        <text ng-repeat="line in $ctrl.x"
+              x="{{ $ctrl.axisX(line.val)-(line.label.length*2) }}"
+              y="{{ $ctrl.height-($ctrl.offsetY/2) }}">{{line.label}}</text>
+    </g>
+    <g class="labels y-labels">
+        <text ng-repeat="line in $ctrl.y"
+              x="{{ $ctrl.offsetX/2 }}"
+              y="{{ $ctrl.axisY(line.val) }}">{{line.label}}</text>
+    </g>
+    <g transform="translate({{$ctrl.axisX($ctrl.tooltipShow.x || 0)+5}},{{$ctrl.axisY($ctrl.tooltipShow.y || 0)-15}})"
+       class="tooltip"
+       ng-show="$ctrl.tooltipShow">
+        <rect width="100" height="30"></rect>
+        <text x="10" y="20">{{$ctrl.tooltipShow.text}}</text>
+    </g>
+</svg>

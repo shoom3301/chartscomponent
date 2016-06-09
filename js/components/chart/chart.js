@@ -7,6 +7,8 @@ class Chart {
         this.offsetY = this.offsetY || 15*this.height/100;
         this.percentY = this.offsetY*100/this.height*2;
         this.percentX = this.offsetX*100/this.width*2;
+        this.pointOffset = 10;
+        this.tooltipShow = false;
     }
     /**
      * Generate string of coordinates for polyline
@@ -42,12 +44,31 @@ class Chart {
      * @param e {Event}
      */
     mouseMove(e){
-        this.cursorX = e.pageX - e.currentTarget.getBoundingClientRect().left;
+        let rect = e.currentTarget.getBoundingClientRect();
+        this.cursorX = e.pageX - rect.left;
+        this.cursorY = e.pageY - rect.top;
+    }
+
+    /**
+     * Check if data point is active show tooltip
+     * @param point {object} data point model
+     * @returns {boolean} this method binded to ng-class
+     */
+    activePoint(point){
+        let pointX = this.axisX(point.x);
+        let isActive = this.cursorX > pointX-this.pointOffset && this.cursorX < pointX+this.pointOffset;
+        if(isActive){
+            if(this.tooltipShow != point) this.tooltipShow = point;
+        }else{
+            if(this.tooltipShow == point) this.tooltipShow = false;
+        }
+
+        return isActive;
     }
 }
 
 module.exports = {
-    templateUrl: 'js/components/chart.html',
+    templateUrl: 'js/components/chart/chart.html',
     controller: Chart,
     bindings: {
         width: '<',

@@ -1,0 +1,53 @@
+$gray: #949ba4;
+$lightGray: #dcdcdc;
+$blue: #74a3c7;
+
+.chart {
+  cursor: default;
+  background: #f6f7f8;
+  .path{
+    stroke: $blue;
+    stroke-width: 1;
+  }
+  .cursor{
+    stroke: $lightGray;
+    stroke-width: 1;
+    stroke-dasharray: 5, 5;
+  }
+  .labels{
+    text{
+      fill: $gray;
+      font-size: 12px;
+    }
+  }
+  .circles{
+    circle{
+      fill: $blue;
+      stroke-width: 2px;
+      stroke: #f6f7f8;
+      &.active{
+        r: 4;
+      }
+    }
+  }
+  .x-lines{
+    line{
+      stroke: $lightGray;
+      stroke-width: 1;
+    }
+  }
+  .tooltip{
+    rect{
+      rx: 4;
+      ry: 4;
+      stroke: $lightGray;
+      stroke-width: 1px;
+      fill: #ffffff;
+      filter: drop-shadow( -5px -5px 5px #000 );
+    }
+    text{
+      fill: $gray;
+      font-size: 14px;
+    }
+  }
+}

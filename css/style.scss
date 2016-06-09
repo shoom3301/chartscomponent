@@ -12,45 +12,8 @@ ul, p, h1, h2, h3, h4, h5{
   padding: 0;
 }
 
-$gray: #949ba4;
-$lightGray: #dcdcdc;
-$blue: #74a3c7;
-
 .clear{
   clear: both;
   float: none;
   display: block;
-}
-
-.chart {
-  background: #f6f7f8;
-  .path{
-    stroke: $blue;
-    stroke-width: 1;
-  }
-  .cursor{
-    stroke: $lightGray;
-    stroke-width: 1;
-    stroke-dasharray: 5, 5;
-  }
-  .labels{
-    text{
-      fill: $gray;
-      font-size: 12px;
-    }
-  }
-  .circles{
-    circle{
-      r: 4;
-      fill: $blue;
-      stroke-width: 2px;
-      stroke: #f6f7f8;
-    }
-  }
-  .x-lines{
-    line{
-      stroke: $lightGray;
-      stroke-width: 1;
-    }
-  }
 }
