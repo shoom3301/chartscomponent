@@ -1,5 +1,5 @@
-<svg viewBox="0 0 800 250" class="chart">
-    <line class="cursor" x1="80" y1="0" x2="80" y2="250"></line>
+<svg width="{{$ctrl.width}}" height="{{$ctrl.height}}" class="chart">
+    <line class="cursor" x1="80" y1="0" x2="80" y2="{{$ctrl.height}}"></line>
     <g class="x-lines">
         <line ng-repeat="line in $ctrl.y"
               x1="{{ $ctrl.offsetX }}"
@@ -12,9 +12,9 @@
         <circle ng-repeat="point in $ctrl.data" cx="{{ $ctrl.axisX(point.x) }}" cy="{{ $ctrl.axisY(point.y) }}" r="4"></circle>
     </g>
     <g class="labels x-labels">
-        <text ng-repeat="line in $ctrl.x" x="{{ $ctrl.axisX(line.val) }}" y="{{ $ctrl.height-$ctrl.offsetY }}">{{line.label}}</text>
+        <text ng-repeat="line in $ctrl.x" x="{{ $ctrl.axisX(line.val) }}" y="{{ $ctrl.height-($ctrl.offsetY/2) }}">{{line.label}}</text>
     </g>
     <g class="labels y-labels">
-        <text ng-repeat="line in $ctrl.y" x="{{ $ctrl.offsetX }}" y="{{ $ctrl.axisY(line.val) }}">{{line.label}}</text>
+        <text ng-repeat="line in $ctrl.y" x="{{ $ctrl.offsetX/2 }}" y="{{ $ctrl.axisY(line.val) }}">{{line.label}}</text>
     </g>
 </svg>

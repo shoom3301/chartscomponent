@@ -2,7 +2,7 @@ import angular from 'angular';
 import chart from './components/chart.js';
 
 let data = {
-    width: 800,
+    width: 500,
     height: 250,
     x: [
         {val: 0, label: 'january'},
@@ -22,7 +22,7 @@ let data = {
     data: [
         {x: 0, y: 0, label: '2 jan.'},
         {x: 12, y: 62, label: '18 jan.'},
-        {x: 28, y: 78, label: '4 feb.'},
+        {x: 28, y: 86, label: '4 feb.'},
         {x: 40, y: 20, label: '1 mar.'},
         {x: 64, y: 48, label: '3 apr.'},
         {x: 82, y: 78, label: '8 jun.'}

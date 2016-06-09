@@ -3,10 +3,11 @@
  */
 class Chart {
     constructor() {
-        this.offsetX = 50;
-        this.offsetY = 40;
+        this.offsetX = this.offsetX || 10*this.width/100;
+        this.offsetY = this.offsetY || 15*this.height/100;
+        this.percentY = this.offsetY*100/this.height*2;
+        this.percentX = this.offsetX*100/this.width*2;
     }
-
     /**
      * Generate string of coordinates for polyline
      * @returns {string}
@@ -25,7 +26,7 @@ class Chart {
      */
     axisX(x){
         let max = this.x[this.x.length-1].val;
-        return (this.width*x/max)+this.offsetX;
+        return (this.width*(x-(x*this.percentX/100))/max)+this.offsetX;
     }
     /**
      * Coordinate of point by Y axis
@@ -34,7 +35,7 @@ class Chart {
      */
     axisY(y){
         let max = this.y[this.y.length-1].val;
-        return this.height-((this.height*y/max)+this.offsetY);
+        return this.height-((this.height*(y-(y*this.percentY/100))/max)+this.offsetY);
     }
 }
 
@@ -46,6 +47,8 @@ module.exports = {
         height: '<',
         x: '<',
         y: '<',
+        offsetX: '<',
+        offsetY: '<',
         data: '<'
     }
 };
